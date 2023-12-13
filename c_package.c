@@ -107,9 +107,8 @@ int main() {
     do {
         displayBoard(board);
 
-
-        printf("Choose 1 st and 2nd Players among yourselves \n\n ");
-         printf("Lets Start to Play and have fun \n\n");
+        printf("Choose 1st and 2nd Players among yourselves \n\n ");
+        printf("Lets Start to Play and have fun \n\n");
         // Get the current player's move
         printf("Player %d, enter your move (1-%d): ", currentPlayer, COLS);
         scanf("%d", &column);
@@ -143,7 +142,11 @@ int main() {
         }
 
         // Switch to the other player
-        currentPlayer = (currentPlayer == 1) ? 2 : 1;
+        if (currentPlayer == 1) {
+            currentPlayer = 2;
+        } else {
+            currentPlayer = 1;
+        }
 
     } while (1);
 
